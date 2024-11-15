@@ -10,6 +10,7 @@ _base_ = [
     '../_base_/datasets/icdar2011.py',
     '../_base_/datasets/icdar2013.py',
     '../_base_/datasets/icdar2015.py',
+    '../_base_/datasets/paddleann.py',
     '../_base_/default_runtime.py',
     '../_base_/schedules/schedule_adam_step_5e.py',
     '_base_sar_resnet31_parallel-decoder.py',
@@ -24,11 +25,13 @@ train_list = [
     _base_.iiit5k_textrecog_train, _base_.mjsynth_sub_textrecog_train,
     _base_.synthtext_sub_textrecog_train, _base_.synthtext_add_textrecog_train
 ]
+# test_list = [
+#     _base_.cute80_textrecog_test, _base_.iiit5k_textrecog_test,
+#     _base_.svt_textrecog_test, _base_.svtp_textrecog_test,
+#     _base_.icdar2013_textrecog_test, _base_.icdar2015_textrecog_test
+# ]
 test_list = [
-    _base_.cute80_textrecog_test, _base_.iiit5k_textrecog_test,
-    _base_.svt_textrecog_test, _base_.svtp_textrecog_test,
-    _base_.icdar2013_textrecog_test, _base_.icdar2015_textrecog_test
-]
+    _base_.paddleann_textrecog_test]
 
 train_list = [
     dict(
@@ -62,8 +65,9 @@ test_dataloader = dict(
         pipeline=_base_.test_pipeline))
 val_dataloader = test_dataloader
 
-val_evaluator = dict(
-    dataset_prefixes=['CUTE80', 'IIIT5K', 'SVT', 'SVTP', 'IC13', 'IC15'])
+# val_evaluator = dict(
+#     dataset_prefixes=['CUTE80', 'IIIT5K', 'SVT', 'SVTP', 'IC13', 'IC15'])
+val_evaluator = dict(dataset_prefixes=['PaddleANN'])
 test_evaluator = val_evaluator
 
 auto_scale_lr = dict(base_batch_size=64 * 48)

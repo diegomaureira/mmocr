@@ -58,5 +58,5 @@ test_preparer = dict(
     packer=dict(type='TextDetPacker'),
     dumper=dict(type='JsonDumper'),
 )
-delete = ['totaltext', 'txt_format', 'annotations']
+#delete = ['totaltext', 'txt_format', 'annotations']
 config_generator = dict(type='TextDetConfigGenerator')

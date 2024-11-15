@@ -1,9 +1,9 @@
-totaltext_textdet_data_root = 'data/totaltext'
+totaltext_textdet_data_root = 'data/paddleann'
 
 totaltext_textdet_train = dict(
     type='OCRDataset',
     data_root=totaltext_textdet_data_root,
-    ann_file='textdet_train.json',
+    ann_file='textdet_test.json',
     filter_cfg=dict(filter_empty_gt=True, min_size=32),
     pipeline=None)
 

@@ -144,3 +144,6 @@ workdirs/
 .history/
 .dev/
 data/
+
+vllama/
+weights/
