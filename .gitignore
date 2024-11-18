@@ -2,7 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.ipynb
 
 # C extensions
 *.so
@@ -147,3 +146,4 @@ data/
 
 vllama/
 weights/
+mo/
